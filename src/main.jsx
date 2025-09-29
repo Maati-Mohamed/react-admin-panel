@@ -4,6 +4,9 @@ import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import "../styles/global.css";
 
+import { store } from "./store/store";
+import { Provider } from "react-redux";
+
 // bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
@@ -13,8 +16,10 @@ import "./i18n";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   </StrictMode>
 );
