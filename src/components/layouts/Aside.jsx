@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function Aside() {
-  const [active, setActive] = useState("active");
+  const settings = useSelector((state) => state.settings);
+
   return (
     <>
       <div className="offcanvas offcanvas-start" id="abc">
@@ -16,8 +17,8 @@ export default function Aside() {
         </div>
 
         <div className="header bg-light p-2 text-center rounded-2">
-          <h5 className="fw-bold mb-0">AlSoouq</h5>
-          <span className="fs-10 text-muted">maati4455@gmail.com</span>
+          <h5 className="fw-bold mb-0">{settings.siteName}</h5>
+          <span className="fs-10 text-muted">{settings.siteEmail}</span>
         </div>
 
         <div className="aside-body mt-4">
@@ -43,7 +44,7 @@ export default function Aside() {
                 <span className="me-3 fs-5">
                   <i className="fa fa-tachometer-alt"></i>
                 </span>
-                Categores
+                Settings
               </a>
             </li>
           </ul>
@@ -52,13 +53,13 @@ export default function Aside() {
 
       <div className="aside p-3">
         <div className="aside-header p-2 text-center rounded-2">
-          <h5 className="fw-bold mb-0">M-panel</h5>
-          <span className="fs-10 text-muted">m_panel@gmail.com</span>
+          <h5 className="fw-bold mb-0">{settings.siteName}</h5>
+          <span className="fs-10 text-muted">{settings.siteEmail}</span>
         </div>
         <div className="aside-body mt-4">
           <ul className="list-unstyled">
             <li className="p-1">
-              <Link href="/admin" className="">
+              <Link to="/dashboard" className="">
                 <span className="me-3 fs-5">
                   <i className="bi bi-house text-dark"></i>
                 </span>
@@ -71,6 +72,22 @@ export default function Aside() {
                   <i className="bi bi-bag text-dark"></i>
                 </span>
                 Products
+              </Link>
+            </li>
+            <li className="p-1">
+              <Link to="/users" className="">
+                <span className="me-3 fs-5">
+                  <i className="bi bi-person text-dark"></i>
+                </span>
+                Users
+              </Link>
+            </li>
+            <li className="p-1">
+              <Link href="/admin/products" className="">
+                <span className="me-3 fs-5">
+                  <i className="bi bi-gear text-dark"></i>
+                </span>
+                Settings
               </Link>
             </li>
           </ul>

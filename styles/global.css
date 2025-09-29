@@ -49,7 +49,17 @@ table thead th {
 .aside-body li {
   border-bottom: 1px solid aqua;
 }
-
+.form-login {
+  background-color: azure;
+  margin-top: 2rem;
+  border-radius: 5px;
+}
+.form-login button {
+  background-color: wheat;
+}
+.form-login button:hover {
+  background-color: rgba(245, 222, 179, 0.793);
+}
 .active {
   background-color: azure;
 }
