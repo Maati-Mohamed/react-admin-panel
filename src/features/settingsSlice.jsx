@@ -5,10 +5,14 @@ export const settingsSlice = createSlice({
   initialState: {
     siteName: "Admin Panel",
     siteEmail: "admin@gmail.com",
+    siteLang: "ar",
   },
   reducers: {
     editWebsite: (state, action) => {
-      state.website = action.payload.website;
+      const { siteName, siteEmail, siteLang } = action.payload;
+      state.siteName = siteName;
+      state.siteEmail = siteEmail;
+      state.siteLang = siteLang;
     },
   },
 });

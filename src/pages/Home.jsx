@@ -1,13 +1,9 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
+import { t } from "i18next";
 
 export default function Home() {
-  const { t, i18n } = useTranslation();
-
-  useEffect(() => {
-    i18n.changeLanguage("ar");
-  }, []);
   return (
     <>
       <div

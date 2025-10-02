@@ -2,24 +2,27 @@ import { createSlice } from "@reduxjs/toolkit";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const loginAsync = createAsyncThunk(
+export const loginAsync = createAsyncThunk(
   "auth/login",
-  async ({ email, password }) => {
-    //const response = await axios.
-    //TODO:
+  async (credentials) => {
+    const response = await axios.post(
+      "https://fakestoreapi.com/auth/login",
+      credentials
+    );
   }
 );
 
 export const authSlice = createSlice({
   name: "auth",
   initialState: {
-    name: "",
-    email: "",
-    password: "",
+    token: "",
   },
-  reducers: {
-    login: (currentState, actions) => {},
-    register: (currentState, actions) => {},
-    logout: (currentState, actions) => {},
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(loginAsync.fulfilled, (state, action) => {
+      console.log("Login success");
+    });
   },
 });
+
+export default authSlice.reducer;

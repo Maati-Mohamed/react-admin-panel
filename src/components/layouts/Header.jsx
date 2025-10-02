@@ -1,4 +1,10 @@
+import { t } from "i18next";
+import { useSelector } from "react-redux";
+
 export default function Header() {
+  const settings = useSelector((state) => {
+    return state.settings;
+  });
   return (
     <>
       <nav className="navbar navbar-expand-lg px-2">
@@ -12,14 +18,16 @@ export default function Header() {
           </span>
         </a>
 
-        <div className="nav-date">
-          <div className="role-name">
-            <p className="mb-0 fw-bold name text-secondary">Maati Mohamed</p>
-            <p className="mb-0 role">Admin</p>
+        <div className=" d-flex align-items-center justify-content-end">
+          <div className="nav-date text-right">
+            <div className="role-name">
+              <p className="mb-0 fw-bold name text-secondary">Maati Mohamed</p>
+              <p className="mb-0 role">{t("Admin")}</p>
+            </div>
           </div>
         </div>
 
-        <div className="dropdown ms-auto">
+        <div className="dropdown user-dropdown">
           <div
             className="custom-small-image cursor-pointer"
             data-bs-toggle="dropdown"
@@ -30,21 +38,25 @@ export default function Header() {
             <img src="/images/icons8-user-48.png" alt="user" />
           </div>
           <ul
-            className="dropdown-menu dropdown-menu-end"
+            className={
+              settings.siteLang == "ar"
+                ? "dropdown-menu dropdown-menu-start"
+                : "dropdown-menu dropdown-menu-end"
+            }
             aria-labelledby="dropdownBtn"
           >
             <li>
-              <a href="/" className="dropdown-item">
-                Website
+              <a href="/" className="dropdown-item text-secondary">
+                {t("Website")}
               </a>
             </li>
             <li>
-              <a href="#" className="dropdown-item">
-                Change Password
+              <a href="#" className="dropdown-item text-secondary">
+                {t("Change Password")}
               </a>
             </li>
             <li>
-              <div className="dropdown-item btn">Logout</div>
+              <div className="dropdown-item btn">{t("Logout")}</div>
             </li>
           </ul>
         </div>
