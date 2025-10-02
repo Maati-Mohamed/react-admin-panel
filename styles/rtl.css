@@ -1,0 +1,26 @@
+body {
+  position: relative;
+  direction: rtl;
+  background-color: #eee !important;
+}
+.aside {
+  background-color: #fff;
+  width: 20vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  /* left: 0; rtl */
+  right: 0;
+  border: 1px solid #dddddd33;
+  z-index: 999;
+}
+@media (min-width: 992px) {
+  .content,
+  .nav-date {
+    /* margin-left: 20vw;  */
+    margin-right: 20vw;
+  }
+}
+.user-dropdown {
+  margin-right: auto;
+}

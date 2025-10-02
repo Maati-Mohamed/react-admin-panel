@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchUser } from "../features/usersSlice";
 import Header from "../components/layouts/header";
 import Aside from "../components/layouts/Aside";
+import Modal from "../components/modal";
+import { t } from "i18next";
 
 export default function Users() {
   const usersState = useSelector((state) => {
@@ -11,24 +13,24 @@ export default function Users() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchUser());
-  }, [dispatch]);
+  }, []);
 
   return (
     <>
       <Header />
       <Aside />
       <div className="content">
-        <h3 className="mb-4">Users Management</h3>
+        <h3 className="mb-4">{t("Users Management")}</h3>
         <div className="table-responsive">
           <table className="table table-striped align-middle">
             <thead className="table-light">
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Role</th>
-                <th scope="col">Status</th>
-                <th scope="col">Actions</th>
+                <th scope="col">{t("Name")}</th>
+                <th scope="col">{t("Email")}</th>
+                <th scope="col">{t("Role")}</th>
+                <th scope="col">{t("Status")}</th>
+                <th scope="col">{t("Actions")}</th>
               </tr>
             </thead>
             <tbody>

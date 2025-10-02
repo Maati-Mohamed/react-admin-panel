@@ -25,20 +25,7 @@
   --main-sold-color: #50a2be;
   --second-color: #50a2bec9;
 }
-body {
-  position: relative;
-}
-.aside {
-  background-color: #fff;
-  box-shadow: -5px 0 15px rgba(89, 87, 87, 0.1);
-  width: 20vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  border-right: 1px solid #ddd;
-  z-index: 999;
-}
+
 table thead th {
   border: none;
 }
@@ -95,10 +82,15 @@ table thead th {
   padding: 2rem;
   margin-top: 0px;
 }
-.dashboard-box-one {
-  background-color: #63d05d;
+.dashboard-box-one,
+.dashboard-box-two,
+.dashboard-box-three,
+.dashboard-box-four {
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 5px;
 }
-.dashboard-box-two {
+/* .dashboard-box-two {
   background-color: orange;
 }
 .dashboard-box-three {
@@ -106,7 +98,7 @@ table thead th {
 }
 .dashboard-box-four {
   background-color: #1f63f0;
-}
+} */
 .role-name {
   margin-left: 0.7rem;
   font-size: 13px !important;
@@ -121,19 +113,24 @@ table thead th {
 }
 .aside-header {
   background-color: azure;
+  font-size: small;
 }
 .card-header {
   border: none;
+}
+.offcanvas-backdrop.show,
+.offcanvas-backdrop {
+  display: none;
+}
+.offcanvas {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 @media (max-width: 992px) {
   .aside {
     display: none;
   }
-}
-@media (min-width: 992px) {
-  .content,
-  .nav-date {
-    margin-left: 20vw;
+  .navbar {
+    display: flex !important;
   }
 }
 

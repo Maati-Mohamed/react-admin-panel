@@ -1,4 +1,23 @@
 {
-  "Home Page": "الصفحة الرئيسية",
-  "Dashboard": "لوحة التحكم"
+  "Home": "الصفحة الرئيسية",
+  "Dashboard": "لوحة التحكم",
+  "Admin": "مسؤول",
+  "Logout": "تسجيل خروج",
+  "Change Password": "تغيير كلمة السر",
+  "ç": "زيارة الموقع",
+  "Products": "المنتجات",
+  "Users": "المسستخدمين",
+  "Settings": "الإعدادت",
+  "Orders": "الطلبات",
+  "Selles": "المبيعات",
+  "Users Management": "إدارة المستخدمين",
+  "Name": "الاسم",
+  "Email": "البريد الالكتروني",
+  "Role": "الصلاحية",
+  "Status": "الحالة",
+  "Actions": "إجراء",
+  "Website name": "إسم الموقع",
+  "Language": "اللغة",
+  "Website": "الموقع",
+  "Updated Successfly": "تم التعديل بنجاح"
 }
